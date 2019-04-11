@@ -180,7 +180,7 @@ while True:
         if seconds==6:          
             os.rename('data.png', 'data'+str(x[-1])+'.png')
             
-            bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
+            bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
                                          
 
 
