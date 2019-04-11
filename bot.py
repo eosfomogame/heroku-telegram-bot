@@ -106,7 +106,7 @@ while True:
 
 
        
-        if (buy-sell) - rems > 1:  
+        if (buy-sell) - rems > 0.001:  
             
             seconds=6
             silent_trades=buy-sell  
