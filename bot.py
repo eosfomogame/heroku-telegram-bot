@@ -105,12 +105,12 @@ while True:
 
 
        
-        if (buy-sell) - rems > 30:  
+        if (buy-sell) - rems > 1:  
             
             seconds=6
             silent_trades=buy-sell  
 
-        elif (buy-sell) - rems < -30:
+        elif (buy-sell) - rems < -1:
             
             seconds=5
             silent_trades=buy-sell  
