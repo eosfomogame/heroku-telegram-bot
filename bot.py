@@ -178,20 +178,20 @@ while True:
         plt.pause(0.0001)
         if seconds==6:          
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            subprocess.Popen(["python telegramNotify.py",'data'+str(x[-1])+'.png',"Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)                                                               
+            subprocess.Popen(["python", telegramNotify.py",'data'+str(x[-1])+'.png',"Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)                                                               
 
 
         elif seconds==5:                       
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            subprocess.Popen(["python telegramNotify.py",'data'+str(x[-1])+'.png',"Sell "+"{0:.0f}".format((buy-sell) - rems)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)     #shell True non mostra la shell                                                              
+            subprocess.Popen(["python", telegramNotify.py",'data'+str(x[-1])+'.png',"Sell "+"{0:.0f}".format((buy-sell) - rems)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)     #shell True non mostra la shell                                                              
             
         elif (buy-sell) - silent_trades > 250:
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            subprocess.Popen(["python telegramNotify.py",'data'+str(x[-1])+'.png',"Buy silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)     #shell True non mostra la shell-->                                                          
+            subprocess.Popen(["python", telegramNotify.py",'data'+str(x[-1])+'.png',"Buy silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)     #shell True non mostra la shell-->                                                          
             silent_trades=buy-sell    
         elif (buy-sell) - silent_trades < -250:       
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            subprocess.Popen(["python telegramNotify.py",'data'+str(x[-1])+'.png',"Sell silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)                                                                  
+            subprocess.Popen(["python", telegramNotify.py",'data'+str(x[-1])+'.png',"Sell silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)                                                                  
             silent_trades=buy-sell
         
         
