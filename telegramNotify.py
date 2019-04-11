@@ -6,7 +6,7 @@ import os
 print("IM ACTIVE!!")
 print(sys.argv[1])
 print(sys.argv[2])
-bot = telegram.Bot(token="774069694:AAF9d0Rzrh3qpWEwBYIrH5m6D_6wslSC5_M")
+bot = telegram.Bot(token="token")
 
 x=0
 y=0
