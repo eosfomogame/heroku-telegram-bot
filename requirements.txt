@@ -1,7 +1,6 @@
 # List of required packages (Dependencies)
 redis
 requests
-time
 os 
 matplotlib
 csv
