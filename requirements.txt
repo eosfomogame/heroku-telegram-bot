@@ -2,7 +2,6 @@
 redis
 requests
 matplotlib
-csv
 subprocess
 sys
 telegram
