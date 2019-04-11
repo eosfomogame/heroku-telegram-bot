@@ -1,2 +1,2 @@
 bot: python3 bot.py
-bot: python3 telegramNotify.py
+worker: python3 telegramNotify.py
