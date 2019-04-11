@@ -1,7 +1,6 @@
 # List of required packages (Dependencies)
 redis
 requests
-os 
 matplotlib
 csv
 subprocess
