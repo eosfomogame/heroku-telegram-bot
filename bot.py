@@ -5,10 +5,11 @@ from time import sleep
 import os #delete file, rename file
 import matplotlib.pyplot as plt
 import csv
-import subprocess 
+import subprocess
+import telegram
 #from datetime import datetime #time
 
-
+bot = telegram.Bot(token="774069694:AAF9d0Rzrh3qpWEwBYIrH5m6D_6wslSC5_M")
 
 
 def lastlinedata(par=0,file='data.txt'):   #0 first element 1 second element
@@ -178,7 +179,9 @@ while True:
         plt.pause(0.0001)
         if seconds==6:          
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            subprocess.Popen(["telegramNotify.py",'data'+str(x[-1])+'.png',"Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)"],shell=True)                                                               
+            
+            bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC","BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
+                                         
 
 
         elif seconds==5:                       
