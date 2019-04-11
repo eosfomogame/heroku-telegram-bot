@@ -3,8 +3,8 @@ import sys
 import telegram
 import time
 import os
-token = os.environ['TELEGRAM_TOKEN']
-bot = telegram.Bot(token)
+
+bot = telegram.Bot(token="774069694:AAF9d0Rzrh3qpWEwBYIrH5m6D_6wslSC5_M")
 
 x=0
 y=0
