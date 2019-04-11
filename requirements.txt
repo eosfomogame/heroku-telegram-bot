@@ -2,4 +2,4 @@
 redis
 requests
 matplotlib
-telegram
+python-telegram-bot
