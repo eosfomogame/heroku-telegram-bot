@@ -177,27 +177,31 @@ while True:
         plt.pause(0.0001)
         plt.savefig('data.png')
         plt.pause(0.0001)
+        xxxttt=0
         if seconds==6:          
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            
-            bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
-                                         
+            while xxxttt==0:
+                bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Buy "+"{0:.0f}".format((buy-sell) - rems)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
+                xxxttt=10                         
 
 
         elif seconds==5:                       
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Sell "+"{0:.0f}".format((buy-sell) - rems)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
-           
+            while xxxttt==0:
+                bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Sell "+"{0:.0f}".format((buy-sell) - rems)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
+                xxxttt=10  
             
         elif (buy-sell) - silent_trades > 250:
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Buy silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
-                                                        
+            while xxxttt==0:
+                bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Buy silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
+                xxxttt=10                                           
             silent_trades=buy-sell    
         elif (buy-sell) - silent_trades < -250:       
             os.rename('data.png', 'data'+str(x[-1])+'.png')
-            bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Sell silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
-                                                                  
+            while xxxttt==0:
+                bot.send_photo(chat_id="-1001389647670", photo=open('data'+str(x[-1])+'.png', 'rb'),caption="Sell silent "+"{0:.0f}".format((buy-sell) - silent_trades)+" BTC"+"\n"+"BTC price: "+str(lastpriceBTC)+" ({0:.2f}".format((lastpriceBTC/semilastpriceBTC*100)-100)+"%)")
+                xxxttt=10                                                  
             silent_trades=buy-sell
         
         
